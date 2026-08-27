@@ -93,7 +93,7 @@ export default function CandidateLogin() {
         <div className="w-full md:flex-1 bg-white flex flex-col px-6 py-10 lg:px-14 relative z-10 shrink-0">
           
           {/* Government Style Header */}
-          <div className="flex items-center justify-between bg-[#06366F] rounded-[8px] p-4 mb-8 shadow-sm relative overflow-hidden">
+          <div className="flex items-center justify-between bg-[#06366F] rounded-[8px] p-3 mb-4 shadow-sm relative overflow-hidden">
   <div className="flex items-center gap-4 z-10">
     <div className="w-8 h-8 rounded-[6px] bg-[#F4B83F] flex items-center justify-center shrink-0">
       <LockKeyhole className="text-[#06366F]" size={20} strokeWidth={2.5} />
@@ -113,7 +113,7 @@ export default function CandidateLogin() {
           <form className="flex flex-col gap-6 flex-1 w-full max-w-[480px] mx-auto md:ml-0 md:max-w-none">
             
             {/* Mandatory Fields Notice */}
-            <p className="text-[#EF4444] italic text-[14px] md:text-[15px] text-right font-medium">
+            <p className="text-[#EF4444] italic text-[12px] md:text-[13px] text-right font-medium">
               Fields marked with (*) are mandatory
             </p>
 

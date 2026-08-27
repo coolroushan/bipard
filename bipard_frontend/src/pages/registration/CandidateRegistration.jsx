@@ -31,7 +31,7 @@ const instructions = [
 
 export default function CandidateRegistration() {
   return (
-    <div className="w-full min-h-screen flex items-center justify-center p-4 md:p-6 lg:p-8 bg-[#e2e8f0]">
+    <div className="w-full min-h-screen flex items-center justify-center p-4 md:p-6 bg-white">
       
       {/* Main Professional Portal Container */}
       <div className="flex flex-col lg:flex-row w-full max-w-[1400px] min-h-[800px] bg-white rounded-none shadow-[0_12px_40px_rgba(0,0,0,0.15)] overflow-hidden relative">
@@ -114,7 +114,7 @@ export default function CandidateRegistration() {
         <div className="w-full lg:flex-1 bg-white flex flex-col px-6 py-8 lg:px-12 relative z-10 shrink-0">
           
           {/* Government Style Header */}
-          <div className="flex items-center justify-between bg-[#06366F] rounded-[8px] p-4 mb-4 shadow-sm relative overflow-hidden">
+          <div className="flex items-center justify-between bg-[#06366F] rounded-[8px] p-3 mb-4 shadow-sm relative overflow-hidden">
             <div className="flex items-center gap-4 z-10">
               <div className="w-8 h-8 rounded-[6px] bg-[#F4B83F] flex items-center justify-center shrink-0">
                 <ClipboardList className="text-[#06366F]" size={20} strokeWidth={2.5} />
