@@ -1,10 +1,51 @@
-import React from "react";
-import { UserPlus, LogIn, ChevronRight } from "lucide-react";
+import React, { useEffect, useState } from "react";
+import {
+  UserPlus,
+  LogIn,
+  LogOut,
+  ChevronRight,
+  User,
+} from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const navigate = useNavigate();
+
+  const [currentUser, setCurrentUser] = useState(null);
+
+  // ==========================================
+  // CHECK LOGIN STATE
+  // ==========================================
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    const savedUser = localStorage.getItem("currentUser");
+
+    if (isLoggedIn === "true" && savedUser) {
+      try {
+        setCurrentUser(JSON.parse(savedUser));
+      } catch (error) {
+        console.error("Invalid currentUser data");
+        setCurrentUser(null);
+      }
+    } else {
+      setCurrentUser(null);
+    }
+  }, []);
+
+  // ==========================================
+  // LOGOUT
+  // ==========================================
+  const handleLogout = () => {
+    // Clear complete localStorage
+    localStorage.clear();
+
+    // Update state immediately
+    setCurrentUser(null);
+
+    // Redirect to login
+    navigate("/login");
+  };
 
   return (
     <header className="w-full bg-white py-2">
@@ -22,7 +63,7 @@ export default function Navbar() {
             TOP GOVERNMENT BAR
         ========================================================= */}
         <div className="relative h-[32px] w-full bg-[#06285a]">
-          {/* Gold diagonal separator */}
+
           <div
             className="
               absolute
@@ -38,7 +79,6 @@ export default function Navbar() {
             "
           />
 
-          {/* Government Information */}
           <div
             className="
               absolute
@@ -115,6 +155,7 @@ export default function Navbar() {
             lg:px-10
           "
         >
+
           {/* =======================================================
               LEFT BRANDING
           ======================================================= */}
@@ -134,45 +175,49 @@ export default function Navbar() {
               lg:gap-5
             "
           >
-            {/* BIPARD Logo */}
-            <Link to="/" className="flex items-center gap-3 no-underline">
-            <img
-              src="/bipard_logo.png"
-              alt="BIPARD Logo"
-              className="
-                h-[50px]
-                w-[50px]
-                sm:h-[62px]
-                sm:w-[62px]
-                shrink-0
-                object-contain
-                md:h-[70px]
-                md:w-[70px]
-                lg:h-[78px]
-                lg:w-[78px]
-              "
-            />
 
-            {/* BIPARD Text */}
-            <div className="shrink-0">
-              <h1
+            {/* BIPARD LOGO */}
+            <Link
+              to="/"
+              className="flex items-center gap-3 no-underline"
+            >
+              <img
+                src="/bipard_logo.png"
+                alt="BIPARD Logo"
                 className="
-                  m-0
-                  text-[28px]
-                  sm:text-[32px]
-                  font-bold
-                  leading-none
-                  tracking-[-1.5px]
-                  text-[#0a376f]
-                  md:text-[38px]
-                  lg:text-[42px]
+                  h-[50px]
+                  w-[50px]
+                  sm:h-[62px]
+                  sm:w-[62px]
+                  shrink-0
+                  object-contain
+                  md:h-[70px]
+                  md:w-[70px]
+                  lg:h-[78px]
+                  lg:w-[78px]
                 "
-              >
-                BIPARD
-              </h1>
-            </div>
-</Link>
-            {/* Vertical Divider */}
+              />
+
+              <div className="shrink-0">
+                <h1
+                  className="
+                    m-0
+                    text-[28px]
+                    sm:text-[32px]
+                    font-bold
+                    leading-none
+                    tracking-[-1.5px]
+                    text-[#0a376f]
+                    md:text-[38px]
+                    lg:text-[42px]
+                  "
+                >
+                  BIPARD
+                </h1>
+              </div>
+            </Link>
+
+            {/* VERTICAL DIVIDER */}
             <div
               className="
                 mx-1
@@ -185,7 +230,7 @@ export default function Navbar() {
               "
             />
 
-            {/* Hindi Organization Name */}
+            {/* ORGANIZATION NAME */}
             <div
               className="
                 hidden
@@ -255,123 +300,281 @@ export default function Navbar() {
               md:gap-4
             "
           >
-            {/* REGISTER */}
-            <button
-              type="button"
-              onClick={() => navigate('/register')}
-              className="
-                group
-                flex
-                w-full
-                sm:w-auto
-                h-[48px]
-                items-center
-                justify-center
-                gap-2
-                cursor-pointer
-                rounded-none
-                border
-                border-[#07336d]
-                bg-[#07336d]
-                px-4
-                text-white
-                shadow-[0_2px_5px_rgba(0,0,0,0.08)]
-                transition-all
-                duration-200
-                hover:bg-[#092f61]
-                hover:shadow-[0_4px_10px_rgba(0,0,0,0.15)]
-                md:h-[50px]
-                md:px-5
-                lg:min-w-[245px]
-                lg:px-5
-              "
-            >
-              <UserPlus size={20} strokeWidth={2} className="shrink-0" />
 
-              <span
+            {/* ====================================================
+                USER NAME / REGISTER AREA
+            ==================================================== */}
+
+            {currentUser ? (
+              <button
+                type="button"
+                onClick={() => navigate("/application")}
                 className="
-                  whitespace-nowrap
-                  text-[12px]
-                  font-semibold
-                  md:text-[13px]
-                  lg:text-[14px]
+                  group
+                  flex
+                  w-full
+                  sm:w-auto
+                  h-[48px]
+                  items-center
+                  justify-center
+                  gap-2
+                  cursor-pointer
+                  rounded-none
+                  border
+                  border-[#07336d]
+                  bg-[#07336d]
+                  px-4
+                  text-white
+                  shadow-[0_2px_5px_rgba(0,0,0,0.08)]
+                  transition-all
+                  duration-200
+                  hover:bg-[#092f61]
+                  hover:shadow-[0_4px_10px_rgba(0,0,0,0.15)]
+                  md:h-[50px]
+                  md:px-5
+                  lg:min-w-[245px]
+                  lg:px-5
                 "
               >
-                Register / परीक्षा हेतु पंजीकरण
-              </span>
+                <User
+                  size={20}
+                  strokeWidth={2}
+                  className="shrink-0"
+                />
 
-              <ChevronRight
-                size={17}
-                strokeWidth={2.2}
+                <div className="flex flex-col items-start min-w-0">
+                  <span
+                    className="
+                      text-[10px]
+                      opacity-80
+                      leading-tight
+                    "
+                  >
+                    Logged in as
+                  </span>
+
+                  <span
+                    className="
+                      max-w-[180px]
+                      truncate
+                      whitespace-nowrap
+                      text-[12px]
+                      font-bold
+                      md:text-[13px]
+                      lg:text-[14px]
+                    "
+                  >
+                    {currentUser.fullName}
+                  </span>
+                </div>
+
+                <ChevronRight
+                  size={17}
+                  strokeWidth={2.2}
+                  className="
+                    ml-auto
+                    shrink-0
+                    opacity-90
+                    transition-transform
+                    duration-200
+                    group-hover:translate-x-1
+                  "
+                />
+              </button>
+            ) : (
+              <button
+                type="button"
+                onClick={() => navigate("/register")}
                 className="
-                  ml-1
-                  sm:ml-auto
-                  shrink-0
-                  opacity-90
-                  transition-transform
+                  group
+                  flex
+                  w-full
+                  sm:w-auto
+                  h-[48px]
+                  items-center
+                  justify-center
+                  gap-2
+                  cursor-pointer
+                  rounded-none
+                  border
+                  border-[#07336d]
+                  bg-[#07336d]
+                  px-4
+                  text-white
+                  shadow-[0_2px_5px_rgba(0,0,0,0.08)]
+                  transition-all
                   duration-200
-                  group-hover:translate-x-1
-                "
-              />
-            </button>
-
-            {/* LOGIN */}
-            <button
-              type="button"
-              onClick={() => navigate('/login')}
-              className="
-                group
-                flex
-                w-full
-                sm:w-auto
-                h-[48px]
-                items-center
-                justify-center
-                gap-2
-                rounded-none
-                border
-                border-[#16457d]
-                bg-white
-                px-4
-                text-[#07336d]
-                transition-all
-                duration-200
-                cursor-pointer
-                hover:bg-[#f7f9fc]
-                hover:shadow-[0_3px_8px_rgba(0,0,0,0.08)]
-                md:h-[50px]
-                md:px-5
-                lg:min-w-[180px]
-              "
-            >
-              <LogIn size={20} strokeWidth={2} className="shrink-0" />
-
-              <span
-                className="
-                  whitespace-nowrap
-                  text-[12px]
-                  font-semibold
-                  md:text-[13px]
-                  lg:text-[14px]
+                  hover:bg-[#092f61]
+                  hover:shadow-[0_4px_10px_rgba(0,0,0,0.15)]
+                  md:h-[50px]
+                  md:px-5
+                  lg:min-w-[245px]
+                  lg:px-5
                 "
               >
-                Login / लॉगिन
-              </span>
+                <UserPlus
+                  size={20}
+                  strokeWidth={2}
+                  className="shrink-0"
+                />
 
-              <ChevronRight
-                size={17}
-                strokeWidth={2.2}
+                <span
+                  className="
+                    whitespace-nowrap
+                    text-[12px]
+                    font-semibold
+                    md:text-[13px]
+                    lg:text-[14px]
+                  "
+                >
+                  Register / परीक्षा हेतु पंजीकरण
+                </span>
+
+                <ChevronRight
+                  size={17}
+                  strokeWidth={2.2}
+                  className="
+                    ml-1
+                    sm:ml-auto
+                    shrink-0
+                    opacity-90
+                    transition-transform
+                    duration-200
+                    group-hover:translate-x-1
+                  "
+                />
+              </button>
+            )}
+
+            {/* ====================================================
+                LOGIN / LOGOUT
+            ==================================================== */}
+
+            {currentUser ? (
+              <button
+                type="button"
+                onClick={handleLogout}
                 className="
-                  ml-1
-                  sm:ml-auto
-                  shrink-0
-                  opacity-90
-                  transition-transform
+                  group
+                  flex
+                  w-full
+                  sm:w-auto
+                  h-[48px]
+                  items-center
+                  justify-center
+                  gap-2
+                  rounded-none
+                  border
+                  border-[#16457d]
+                  bg-white
+                  px-4
+                  text-[#07336d]
+                  transition-all
                   duration-200
-                  group-hover:translate-x-1
+                  cursor-pointer
+                  hover:bg-[#fff5f5]
+                  hover:text-red-600
+                  hover:border-red-300
+                  hover:shadow-[0_3px_8px_rgba(0,0,0,0.08)]
+                  md:h-[50px]
+                  md:px-5
+                  lg:min-w-[180px]
                 "
-              />
-            </button>
+              >
+                <LogOut
+                  size={20}
+                  strokeWidth={2}
+                  className="shrink-0"
+                />
+
+                <span
+                  className="
+                    whitespace-nowrap
+                    text-[12px]
+                    font-semibold
+                    md:text-[13px]
+                    lg:text-[14px]
+                  "
+                >
+                  Logout / लॉगआउट
+                </span>
+
+                <ChevronRight
+                  size={17}
+                  strokeWidth={2.2}
+                  className="
+                    ml-1
+                    sm:ml-auto
+                    shrink-0
+                    opacity-90
+                    transition-transform
+                    duration-200
+                    group-hover:translate-x-1
+                  "
+                />
+              </button>
+            ) : (
+              <button
+                type="button"
+                onClick={() => navigate("/login")}
+                className="
+                  group
+                  flex
+                  w-full
+                  sm:w-auto
+                  h-[48px]
+                  items-center
+                  justify-center
+                  gap-2
+                  rounded-none
+                  border
+                  border-[#16457d]
+                  bg-white
+                  px-4
+                  text-[#07336d]
+                  transition-all
+                  duration-200
+                  cursor-pointer
+                  hover:bg-[#f7f9fc]
+                  hover:shadow-[0_3px_8px_rgba(0,0,0,0.08)]
+                  md:h-[50px]
+                  md:px-5
+                  lg:min-w-[180px]
+                "
+              >
+                <LogIn
+                  size={20}
+                  strokeWidth={2}
+                  className="shrink-0"
+                />
+
+                <span
+                  className="
+                    whitespace-nowrap
+                    text-[12px]
+                    font-semibold
+                    md:text-[13px]
+                    lg:text-[14px]
+                  "
+                >
+                  Login / लॉगिन
+                </span>
+
+                <ChevronRight
+                  size={17}
+                  strokeWidth={2.2}
+                  className="
+                    ml-1
+                    sm:ml-auto
+                    shrink-0
+                    opacity-90
+                    transition-transform
+                    duration-200
+                    group-hover:translate-x-1
+                  "
+                />
+              </button>
+            )}
           </div>
         </div>
 
@@ -379,8 +582,11 @@ export default function Navbar() {
             BOTTOM GOLD LINE
         ========================================================= */}
         <div className="relative h-[7px] bg-white">
+
           <div className="absolute left-0 top-0 h-[2px] w-full bg-[#d9ad72]" />
+
           <div className="absolute bottom-0 left-0 h-[3px] w-full bg-[#f5f1eb]" />
+
           <div
             className="
               absolute
@@ -408,9 +614,18 @@ export default function Navbar() {
                 bg-[#d9ad72]
               "
             />
-            <span className="mt-[3px] text-[9px] text-[#d9ad72]">★</span>
-            <span className="mt-[3px] text-[9px] text-[#d9ad72]">★</span>
-            <span className="mt-[3px] text-[9px] text-[#d9ad72]">★</span>
+
+            <span className="mt-[3px] text-[9px] text-[#d9ad72]">
+              ★
+            </span>
+
+            <span className="mt-[3px] text-[9px] text-[#d9ad72]">
+              ★
+            </span>
+
+            <span className="mt-[3px] text-[9px] text-[#d9ad72]">
+              ★
+            </span>
           </div>
         </div>
       </div>
