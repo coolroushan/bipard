@@ -1,5 +1,6 @@
 import React from 'react';
 import { Mail, Phone, MapPin } from "lucide-react";
+import { Link } from 'react-router-dom';
 import { portalData } from '../data/content';
 
 export default function Footer() {
@@ -20,8 +21,17 @@ export default function Footer() {
           <div className="space-y-4">
             <h4 className="text-white font-bold text-lg tracking-wider">USEFUL LINKS</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 bg-gov-accent rounded-full"></span> Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 bg-gov-accent rounded-full"></span> Refund Policy</a></li>
+              {/* Replaced <a> with <Link> for seamless routing */}
+              <li>
+                <Link to="/privacy-policy" className="hover:text-white transition-colors flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-gov-accent rounded-full"></span> Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link to="/refund-policy" className="hover:text-white transition-colors flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-gov-accent rounded-full"></span> Refund Policy
+                </Link>
+              </li>
             </ul>
           </div>
           <div className="space-y-4">
@@ -41,7 +51,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-12 pt-6 border-t border-blue-800 text-center text-xs text-blue-300">
-          <p>Copyright © {new Date().getFullYear()} Codebucket Solutions Pvt. Ltd. All Rights Reserved.</p>
+          <p>Copyright © {new Date().getFullYear()} MetConnect InfoTech Pvt. Ltd. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

@@ -34,23 +34,15 @@ export default function CandidateLogin() {
           {/* Textures and Motifs */}
           <div className="login-pattern" />
           
-          {/* Subtle Bottom Architectural Silhouette */}
-          <div className="absolute bottom-0 left-0 w-full opacity-[0.08] pointer-events-none z-0">
-            <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
-              <path d="M0,300 L800,300 L800,280 L750,280 L750,260 L730,260 L730,220 L710,220 L710,200 L650,200 L650,150 L630,150 L630,130 L550,130 L550,100 L450,100 L450,80 L420,80 L420,40 L400,20 L380,40 L380,80 L350,80 L350,100 L250,100 L250,130 L170,130 L170,150 L150,150 L150,200 L90,200 L90,220 L70,220 L70,260 L50,260 L50,280 L0,280 Z" fill="#ffffff" />
-              <circle cx="400" cy="90" r="45" fill="#ffffff" />
-            </svg>
-          </div>
-
           {/* 
             CRITICAL REQUIREMENT: THE S-CURVE 
             Using precise Bezier curves (C) to bow IN to the blue, then OUT to the white 
           */}
           <svg className="login-s-curve" viewBox="0 0 100 1000" preserveAspectRatio="none">
-            {/* Layer 1: Gold Edge (#E3AD54) - Pulled slightly further left to create the border */}
-            <path d="M100,0 C-40,250 110,700 -20,1000 L100,1000 Z" fill="#E3AD54" />
-            {/* Layer 2: White Mask Background - Overlaps the gold to create a perfect curved transition */}
-            <path d="M100,0 C-25,250 125,700 -5,1000 L100,1000 Z" fill="#ffffff" />
+            {/* Layer 1: Gold Edge (#E3AD54) - Bottom X shifted to 10 so it stays visible inside the SVG */}
+            <path d="M100,0 C-40,250 110,700 10,1000 L100,1000 Z" fill="#E3AD54" />
+            {/* Layer 2: White Mask Background - Bottom X shifted to 25 to preserve the uniform gold border thickness */}
+            <path d="M100,0 C-25,250 125,700 25,1000 L100,1000 Z" fill="#ffffff" />
           </svg>
 
           {/* Left Panel Content */}
@@ -101,14 +93,22 @@ export default function CandidateLogin() {
         <div className="w-full md:flex-1 bg-white flex flex-col px-6 py-10 lg:px-14 relative z-10 shrink-0">
           
           {/* Government Style Header */}
-          <div className="flex items-center gap-4 bg-[#06366F] rounded-t-xl rounded-b-md p-5 border-b-[5px] border-[#E3AD54] mb-8 shadow-sm">
-            <div className="w-10 h-10 rounded-full bg-white/15 flex items-center justify-center shrink-0">
-              <LockKeyhole className="text-[#F4B83F]" size={22} strokeWidth={2.5} />
-            </div>
-            <h2 className="text-white font-bold text-[24px] lg:text-[28px] tracking-wide">
-              Candidate Login
-            </h2>
-          </div>
+          <div className="flex items-center justify-between bg-[#06366F] rounded-[8px] p-4 mb-8 shadow-sm relative overflow-hidden">
+  <div className="flex items-center gap-4 z-10">
+    <div className="w-8 h-8 rounded-[6px] bg-[#F4B83F] flex items-center justify-center shrink-0">
+      <LockKeyhole className="text-[#06366F]" size={20} strokeWidth={2.5} />
+    </div>
+    <h2 className="text-white font-bold text-[17px] lg:text-[20px] tracking-wide">
+      Candidate Login
+    </h2>
+  </div>
+  {/* Header Diagonal Decorative Slashes */}
+  <div className="absolute right-[-20px] top-0 h-full flex gap-2 -skew-x-[30deg] z-0">
+    <div className="w-3 bg-white/20 h-full" />
+    <div className="w-8 bg-[#F4B83F] h-full" />
+    <div className="w-3 bg-white/20 h-full" />
+  </div>
+</div>
 
           <form className="flex flex-col gap-6 flex-1 w-full max-w-[480px] mx-auto md:ml-0 md:max-w-none">
             

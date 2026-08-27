@@ -34,7 +34,7 @@ export default function CandidateRegistration() {
     <div className="w-full min-h-screen flex items-center justify-center p-4 md:p-6 lg:p-8 bg-[#e2e8f0]">
       
       {/* Main Professional Portal Container */}
-      <div className="flex flex-col lg:flex-row w-full max-w-[1300px] min-h-[800px] bg-white rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.15)] overflow-hidden relative">
+      <div className="flex flex-col lg:flex-row w-full max-w-[1400px] min-h-[800px] bg-white rounded-none shadow-[0_12px_40px_rgba(0,0,0,0.15)] overflow-hidden relative">
         
         {/* ─── LEFT GOVERNMENT PANEL (NAVY) ─────────────────────────── */}
         <div className="registration-left-panel w-full lg:w-[42%] flex flex-col pt-10 pb-10 px-8 lg:px-12 relative shrink-0 overflow-hidden lg:overflow-visible">
@@ -42,23 +42,15 @@ export default function CandidateRegistration() {
           {/* Textures and Motifs */}
           <div className="registration-pattern" />
           
-          {/* Subtle Bottom Architectural Silhouette */}
-          <div className="absolute bottom-0 left-0 w-full opacity-[0.06] pointer-events-none z-0">
-            <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
-              <path d="M0,300 L800,300 L800,280 L750,280 L750,260 L730,260 L730,220 L710,220 L710,200 L650,200 L650,150 L630,150 L630,130 L550,130 L550,100 L450,100 L450,80 L420,80 L420,40 L400,20 L380,40 L380,80 L350,80 L350,100 L250,100 L250,130 L170,130 L170,150 L150,150 L150,200 L90,200 L90,220 L70,220 L70,260 L50,260 L50,280 L0,280 Z" fill="#ffffff" />
-              <circle cx="400" cy="90" r="45" fill="#ffffff" />
-            </svg>
-          </div>
-
           {/* 
             CRITICAL REQUIREMENT: THE S-CURVE 
-            Using precise Bezier curves to bow LEFT into the blue, then RIGHT into the white, matching the screenshot perfectly.
+            Using precise Bezier curves to bow LEFT into the blue, then RIGHT into the white.
           */}
           <svg className="registration-s-curve" viewBox="0 0 100 1000" preserveAspectRatio="none">
-            {/* Layer 1: Gold Edge (#F4B83F) - Offset slightly to create the border */}
-            <path d="M100,0 C-30,250 140,650 -20,1000 L100,1000 Z" fill="#F4B83F" />
-            {/* Layer 2: White Mask Background - Overlaps to create the transition */}
-            <path d="M100,0 C-15,250 155,650 -5,1000 L100,1000 Z" fill="#ffffff" />
+            {/* Layer 1: Gold Edge (#F4B83F) - Top started at 85, Bottom shifted to 10 so it stays visible inside the SVG */}
+            <path d="M85,0 C-30,250 140,650 10,1000 L100,1000 L100,0 Z" fill="#F4B83F" />
+            {/* Layer 2: White Mask Background - Top at 100, Bottom shifted to 25 to preserve uniform gold border thickness */}
+            <path d="M100,0 C-15,250 155,650 25,1000 L100,1000 Z" fill="#ffffff" />
           </svg>
 
           {/* Left Panel Content */}
@@ -124,10 +116,10 @@ export default function CandidateRegistration() {
           {/* Government Style Header */}
           <div className="flex items-center justify-between bg-[#06366F] rounded-[8px] p-4 mb-4 shadow-sm relative overflow-hidden">
             <div className="flex items-center gap-4 z-10">
-              <div className="w-10 h-10 rounded-[6px] bg-[#F4B83F] flex items-center justify-center shrink-0">
-                <ClipboardList className="text-[#06366F]" size={24} strokeWidth={2.5} />
+              <div className="w-8 h-8 rounded-[6px] bg-[#F4B83F] flex items-center justify-center shrink-0">
+                <ClipboardList className="text-[#06366F]" size={20} strokeWidth={2.5} />
               </div>
-              <h2 className="text-white font-bold text-[22px] lg:text-[26px] tracking-wide">
+              <h2 className="text-white font-bold text-[17px] lg:text-[20px] tracking-wide">
                 Candidate Registration
               </h2>
             </div>

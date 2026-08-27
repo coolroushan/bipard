@@ -43,7 +43,12 @@ export default function DirectorMessage() {
             return (
               <p key={idx} className="text-[#334155] text-[15px] md:text-[16px] leading-[1.85]">
                 {parts[0]}
-                <a href="#" className="text-[#075fb8] font-semibold hover:underline">
+                <a 
+                  href="/Govt order for Bipard exam.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-[#075fb8] font-semibold hover:underline"
+                >
                   इस लिंक
                 </a>
                 {parts[1]}

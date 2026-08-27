@@ -6,7 +6,7 @@ import Footer from './Footer';
 /* ── News Ticker Component ───────────────────────────────────── */
 const NewsTicker = () => {
   return (
-    <div className="w-full bg-[#828282] text-white py-2 overflow-hidden flex relative group border-t border-b border-gray-400 shadow-sm z-10">
+    <div className="w-full bg-[#828282] text-white py-1 overflow-hidden flex relative group border-t border-b border-gray-400 shadow-sm z-10">
       
       {/* 
         Injecting scoped CSS for the seamless loop animation.
