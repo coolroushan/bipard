@@ -306,7 +306,7 @@ export default function CandidateRegistration() {
               <div className="text-center">
                 <span className="text-gray-600 text-[15px] font-medium">Already a member? </span>
                 <a href="/login" className="text-[#1260B2] font-bold text-[15px] hover:underline decoration-2 underline-offset-4">
-                  Signup now
+                  Login now
                 </a>
               </div>
             </div>

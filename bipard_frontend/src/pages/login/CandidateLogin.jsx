@@ -59,7 +59,7 @@ export default function CandidateLogin() {
             </div>
 
             {/* General Instructions Heading */}
-            <h2 className="text-[#F4B83F] font-bold text-[22px] lg:text-[26px] leading-tight mb-2 tracking-wide">
+            <h2 className="text-[#F4B83F] font-bold text-[22px] lg:text-[24px] leading-tight mb-2 tracking-wide">
               GENERAL INSTRUCTIONS / सामान्य निर्देश:
             </h2>
             
@@ -180,11 +180,15 @@ export default function CandidateLogin() {
                 Login
                 <LogIn size={20} strokeWidth={2.5} />
               </button>
-
+              <div className="flex items-center justify-center gap-4 w-full">
+                <span className="h-px bg-gray-200 flex-1"></span>
+                <span className="text-gray-400 text-sm font-medium border border-gray-200 rounded-full px-3 py-1">OR</span>
+                <span className="h-px bg-gray-200 flex-1"></span>
+              </div>
               <div className="text-center">
                 <span className="text-gray-600 text-[15px] font-medium">Not a member? </span>
                 <a href="/register" className="text-[#06366F] font-bold text-[15px] hover:underline decoration-2 underline-offset-4">
-                  Signup now
+                  Register now
                 </a>
               </div>
             </div>
