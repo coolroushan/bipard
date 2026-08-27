@@ -1,0 +1,39 @@
+/* src/components/CandidateRegistration.css */
+
+.registration-left-panel {
+  background-color: #06366F;
+  position: relative;
+}
+
+/* Subtle Dotted Pattern Overlay */
+.registration-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1.5px, transparent 1.5px);
+  background-size: 16px 16px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* 
+  The Critical S-Curve SVG Overlay 
+  This creates the flowing organic boundary on the right edge.
+  It is strictly pinned to the right side of the left panel.
+*/
+.registration-s-curve {
+  position: absolute;
+  top: 0;
+  right: -1px; /* Prevents 1px artifacting gaps */
+  height: 100%;
+  width: 140px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  /* On mobile/tablet where panels stack vertically, hide the complex side curve */
+  .registration-s-curve {
+    display: none;
+  }
+}

@@ -1,0 +1,38 @@
+/* src/components/CandidateLogin.css */
+
+.login-left-panel {
+  background-color: #06366F;
+  position: relative;
+}
+
+/* Subtle Dotted Pattern Overlay */
+.login-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1.5px, transparent 1.5px);
+  background-size: 16px 16px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* 
+  The Critical S-Curve SVG Overlay 
+  This creates the flowing organic boundary on the right edge.
+*/
+.login-s-curve {
+  position: absolute;
+  top: 0;
+  right: -1px; /* Prevents 1px artifacting gaps */
+  height: 100%;
+  width: 140px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  /* On mobile, panels stack vertically. Hide the side curve. */
+  .login-s-curve {
+    display: none;
+  }
+}
