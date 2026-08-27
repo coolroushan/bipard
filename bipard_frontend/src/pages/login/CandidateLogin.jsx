@@ -289,49 +289,28 @@ export default function CandidateLogin() {
         ====================================================== */}
 
         <div className="w-full md:flex-1 bg-white flex flex-col px-6 py-10 lg:px-14 relative z-10 shrink-0">
-
-          {/* HEADER */}
-
+          
+          {/* Government Style Header */}
           <div className="flex items-center justify-between bg-[#06366F] rounded-[8px] p-4 mb-8 shadow-sm relative overflow-hidden">
+  <div className="flex items-center gap-4 z-10">
+    <div className="w-8 h-8 rounded-[6px] bg-[#F4B83F] flex items-center justify-center shrink-0">
+      <LockKeyhole className="text-[#06366F]" size={20} strokeWidth={2.5} />
+    </div>
+    <h2 className="text-white font-bold text-[17px] lg:text-[20px] tracking-wide">
+      Candidate Login
+    </h2>
+  </div>
+  {/* Header Diagonal Decorative Slashes */}
+  <div className="absolute right-[-20px] top-0 h-full flex gap-2 -skew-x-[30deg] z-0">
+    <div className="w-3 bg-white/20 h-full" />
+    <div className="w-8 bg-[#F4B83F] h-full" />
+    <div className="w-3 bg-white/20 h-full" />
+  </div>
+</div>
 
-            <div className="flex items-center gap-4 z-10">
-
-              <div className="w-8 h-8 rounded-[6px] bg-[#F4B83F] flex items-center justify-center shrink-0">
-
-                <LockKeyhole
-                  className="text-[#06366F]"
-                  size={20}
-                  strokeWidth={2.5}
-                />
-
-              </div>
-
-              <h2 className="text-white font-bold text-[17px] lg:text-[20px] tracking-wide">
-                Candidate Login
-              </h2>
-
-            </div>
-
-            <div className="absolute right-[-20px] top-0 h-full flex gap-2 -skew-x-[30deg] z-0">
-
-              <div className="w-3 bg-white/20 h-full" />
-
-              <div className="w-8 bg-[#F4B83F] h-full" />
-
-              <div className="w-3 bg-white/20 h-full" />
-
-            </div>
-
-          </div>
-
-          <form
-            onSubmit={handleLogin}
-            noValidate
-            className="flex flex-col gap-6 flex-1 w-full max-w-[480px] mx-auto md:ml-0 md:max-w-none"
-          >
-
-            {/* NOTICE */}
-
+          <form className="flex flex-col gap-6 flex-1 w-full max-w-[480px] mx-auto md:ml-0 md:max-w-none">
+            
+            {/* Mandatory Fields Notice */}
             <p className="text-[#EF4444] italic text-[14px] md:text-[15px] text-right font-medium">
               Fields marked with (*) are mandatory
             </p>
