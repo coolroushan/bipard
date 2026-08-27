@@ -216,27 +216,27 @@ const Application = () => {
           <div className="flex items-center justify-between">
             {/* STEP 1 */}
             <button type="button" onClick={() => changeStep(1)} className="group flex items-center gap-2">
-              <div className={`flex h-9 w-9 items-center justify-center rounded-full text-sm font-semibold transition ${currentStep === 1 ? "bg-[#126df3] text-white shadow-md" : "bg-[#dce9f8] text-[#126df3]"}`}>
+              <div className={`flex h-9 w-9 items-center justify-center rounded-full text-sm font-semibold transition ${currentStep === 1 ? "bg-[#07336d] text-white shadow-md" : "bg-[#dce9f8] text-[#07336d]"}`}>
                 1
               </div>
               <div className="hidden text-left sm:block">
-                <p className={`text-xs font-semibold ${currentStep === 1 ? "text-[#126df3]" : "text-gray-500"}`}>STEP 1</p>
+                <p className={`text-xs font-semibold ${currentStep === 1 ? "text-[#07336d]" : "text-gray-500"}`}>STEP 1</p>
                 <p className="text-sm font-medium">Registration</p>
               </div>
             </button>
 
             {/* CONNECTOR */}
             <div className="mx-3 h-[2px] flex-1 bg-[#dbe1e7] sm:mx-6">
-              <div className={`h-full transition-all duration-500 ${currentStep === 2 ? "w-full bg-[#126df3]" : "w-0"}`} />
+              <div className={`h-full transition-all duration-500 ${currentStep === 2 ? "w-full bg-[#07336d]" : "w-0"}`} />
             </div>
 
             {/* STEP 2 */}
             <button type="button" onClick={() => changeStep(2)} className="group flex items-center gap-2">
-              <div className={`flex h-9 w-9 items-center justify-center rounded-full text-sm font-semibold transition ${currentStep === 2 ? "bg-[#126df3] text-white shadow-md" : "bg-[#dce9f8] text-[#126df3]"}`}>
+              <div className={`flex h-9 w-9 items-center justify-center rounded-full text-sm font-semibold transition ${currentStep === 2 ? "bg-[#07336d] text-white shadow-md" : "bg-[#dce9f8] text-[#07336d]"}`}>
                 2
               </div>
               <div className="hidden text-left sm:block">
-                <p className={`text-xs font-semibold ${currentStep === 2 ? "text-[#126df3]" : "text-gray-500"}`}>STEP 2</p>
+                <p className={`text-xs font-semibold ${currentStep === 2 ? "text-[#07336d]" : "text-gray-500"}`}>STEP 2</p>
                 <p className="text-sm font-medium">Document Upload</p>
               </div>
             </button>
@@ -281,7 +281,7 @@ const StepOne = ({ formData, photoName, signatureName, handleChange, handleFileC
       {/* PAGE TITLE */}
       <div className="border-b border-[#d8dee5] bg-white">
         <div className="flex flex-col gap-3 px-4 py-3 sm:flex-row sm:items-center sm:px-6 lg:px-8">
-          <button type="button" onClick={() => window.history.back()} className="flex w-fit items-center gap-1.5 rounded-md bg-[#ffc107] px-4 py-2 text-sm font-medium text-gray-900 shadow-sm transition hover:bg-[#e5aa00]">
+          <button type="button" onClick={() => window.history.back()} className="flex w-fit items-center gap-1.5 rounded-md bg-[#07336d] px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-[#05224a]">
             ← Back
           </button>
           <div className="flex flex-1 items-center justify-center">
@@ -320,7 +320,7 @@ const StepOne = ({ formData, photoName, signatureName, handleChange, handleFileC
                 <div className="flex min-h-10 flex-wrap items-center gap-5">
                   {["Male", "Female", "Transgender"].map((gender) => (
                     <label key={gender} className="flex cursor-pointer items-center gap-2 text-sm">
-                      <input type="radio" name="gender" value={gender} checked={formData.gender === gender} onChange={handleChange} className="h-4 w-4 accent-[#126df3]" />
+                      <input type="radio" name="gender" value={gender} checked={formData.gender === gender} onChange={handleChange} className="h-4 w-4 accent-[#07336d]" />
                       {gender}
                     </label>
                   ))}
@@ -404,7 +404,7 @@ const StepOne = ({ formData, photoName, signatureName, handleChange, handleFileC
 
           <div className="p-4 sm:p-5">
             <label className="flex cursor-pointer items-start gap-3 rounded-md border border-[#dce3ea] bg-[#fafbfc] p-4 transition hover:bg-[#f5f8fb]">
-              <input type="checkbox" name="declaration" checked={formData.declaration} onChange={handleChange} className="mt-1 h-4 w-4 shrink-0 accent-[#126df3]" />
+              <input type="checkbox" name="declaration" checked={formData.declaration} onChange={handleChange} className="mt-1 h-4 w-4 shrink-0 accent-[#07336d]" />
               <span className="text-xs leading-6 text-gray-700 sm:text-sm">
                 I hereby affirm that all the above given information is true to the best of my knowledge. If any of the details are found to be incorrect, my candidature may be rejected.
               </span>
@@ -423,10 +423,10 @@ const StepOne = ({ formData, photoName, signatureName, handleChange, handleFileC
 
         {/* ACTIONS */}
         <div className="flex flex-col gap-3 pb-5 sm:flex-row">
-          <button type="button" onClick={handleSavePrint} className="flex min-h-12 flex-1 items-center justify-center gap-2 rounded-md border border-[#126df3] bg-white px-5 py-3 text-sm font-semibold text-[#126df3] transition hover:bg-[#f0f6ff]">
+          <button type="button" onClick={handleSavePrint} className="flex min-h-12 flex-1 items-center justify-center gap-2 rounded-md border border-[#07336d] bg-white px-5 py-3 text-sm font-semibold text-[#07336d] transition hover:bg-[#f0f6ff]">
             ▣ Save & Print
           </button>
-          <button type="submit" className="flex min-h-12 flex-[1.5] items-center justify-center gap-2 rounded-md bg-[#126df3] px-5 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-[#095bcf] hover:shadow-lg">
+          <button type="submit" className="flex min-h-12 flex-[1.5] items-center justify-center gap-2 rounded-md bg-[#07336d] px-5 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-[#05224a] hover:shadow-lg">
             Continue to Step 2 <span>→</span>
           </button>
         </div>
@@ -468,7 +468,7 @@ const CustomDropdown = ({ name, value, options, placeholder, searchable = false,
   return (
     <div ref={wrapperRef} className="relative w-full">
       {/* SELECT BUTTON */}
-      <button type="button" name={name} onClick={() => setOpen((prev) => !prev)} className={`flex h-11 w-full items-center justify-between rounded-md border bg-white px-3 text-left text-sm outline-none transition ${open ? "border-[#126df3] ring-2 ring-[#126df3]/15" : "border-[#cfd7df] hover:border-[#aeb9c5]"}`}>
+      <button type="button" name={name} onClick={() => setOpen((prev) => !prev)} className={`flex h-11 w-full items-center justify-between rounded-md border bg-white px-3 text-left text-sm outline-none transition ${open ? "border-[#07336d] ring-2 ring-[#07336d]/15" : "border-[#cfd7df] hover:border-[#aeb9c5]"}`}>
         <span className={`min-w-0 truncate ${value ? "text-[#263746]" : "text-[#8a96a3]"}`}>{value || placeholder}</span>
         <span className={`ml-3 shrink-0 text-xs text-gray-500 transition-transform ${open ? "rotate-180" : ""}`}>▼</span>
       </button>
@@ -481,7 +481,7 @@ const CustomDropdown = ({ name, value, options, placeholder, searchable = false,
             <div className="border-b border-[#e3e7eb] bg-white p-2">
               <div className="relative">
                 <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">🔍</span>
-                <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} onClick={(e) => e.stopPropagation()} autoFocus placeholder="Search..." className="h-10 w-full rounded-md border border-[#d5dce3] bg-[#f8fafc] pl-9 pr-3 text-sm outline-none focus:border-[#126df3] focus:ring-2 focus:ring-[#126df3]/10" />
+                <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} onClick={(e) => e.stopPropagation()} autoFocus placeholder="Search..." className="h-10 w-full rounded-md border border-[#d5dce3] bg-[#f8fafc] pl-9 pr-3 text-sm outline-none focus:border-[#07336d] focus:ring-2 focus:ring-[#07336d]/10" />
               </div>
             </div>
           )}
@@ -492,9 +492,9 @@ const CustomDropdown = ({ name, value, options, placeholder, searchable = false,
               filteredOptions.map((option) => {
                 const selected = value === option;
                 return (
-                  <button key={option} type="button" onClick={() => handleSelect(option)} className={`flex min-h-10 w-full items-center justify-between px-3 py-2 text-left text-sm transition ${selected ? "bg-[#eaf2ff] font-medium text-[#126df3]" : "text-[#263746] hover:bg-[#f3f7fc]"}`}>
+                  <button key={option} type="button" onClick={() => handleSelect(option)} className={`flex min-h-10 w-full items-center justify-between px-3 py-2 text-left text-sm transition ${selected ? "bg-[#eaf2ff] font-medium text-[#07336d]" : "text-[#263746] hover:bg-[#f3f7fc]"}`}>
                     <span className="pr-3">{option}</span>
-                    {selected && <span className="shrink-0 font-bold text-[#126df3]">✓</span>}
+                    {selected && <span className="shrink-0 font-bold text-[#07336d]">✓</span>}
                   </button>
                 );
               })
@@ -525,7 +525,7 @@ const DocumentUpload = ({ applicationFileName, handleApplicationFileChange, hand
       {/* HEADER */}
       <div className="border-b border-[#d8dee5] bg-white">
         <div className="flex items-center px-4 py-3 sm:px-6 lg:px-8">
-          <button type="button" onClick={onBack} className="flex items-center gap-1.5 rounded-md bg-[#ffc107] px-4 py-2 text-sm font-medium text-gray-900 shadow-sm transition hover:bg-[#e5aa00]">
+          <button type="button" onClick={onBack} className="flex items-center gap-1.5 rounded-md bg-[#07336d] px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-[#05224a]">
             ← Back
           </button>
           <div className="flex flex-1 items-center justify-center">
@@ -543,7 +543,7 @@ const DocumentUpload = ({ applicationFileName, handleApplicationFileChange, hand
         <section className="overflow-hidden rounded-lg border border-[#d8dee5] bg-white shadow-md">
           {/* CARD HEADER */}
           <div className="border-b border-[#dce2e7] bg-[#f8f9fa] px-4 py-5 text-center sm:px-8">
-            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#e6f0ff] text-xl text-[#126df3]">▣</div>
+            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#e6f0ff] text-xl text-[#07336d]">▣</div>
             <h2 className="mt-3 text-xl font-semibold text-[#172b40] sm:text-2xl">Documents Details</h2>
             <p className="mx-auto mt-3 max-w-5xl text-sm italic leading-7 text-red-500">
               नोट - आवेदक अनिवार्यतः अपने नियंत्री पदाधिकारी / कार्यालय प्रधान से ही आवेदन अग्रसारित कराकर ही अपलोड करेंगे। किसी अन्य पदाधिकारी द्वारा अग्रसारित आवेदन पत्र मान्य नहीं होगा। बिना ज्ञापांक और दिनांक के अग्रसारित आवेदन पत्र अस्वीकृत कर दिया जायेगा।
@@ -558,7 +558,7 @@ const DocumentUpload = ({ applicationFileName, handleApplicationFileChange, hand
                   <span className="mr-1 text-red-500">*</span> Application Form
                 </label>
                 {/* FILE INPUT */}
-                <label className="group flex h-12 cursor-pointer overflow-hidden rounded-md border border-[#cbd5df] bg-white transition hover:border-[#126df3] hover:shadow-sm">
+                <label className="group flex h-12 cursor-pointer overflow-hidden rounded-md border border-[#cbd5df] bg-white transition hover:border-[#07336d] hover:shadow-sm">
                   <span className="flex shrink-0 items-center gap-2 border-r border-[#cbd5df] bg-[#f5f7f9] px-4 text-sm font-medium text-[#263746] transition group-hover:bg-[#eef5ff] sm:text-base">
                     Choose file
                   </span>
@@ -592,7 +592,7 @@ const DocumentUpload = ({ applicationFileName, handleApplicationFileChange, hand
         )}
 
         {/* UPLOAD */}
-        <button type="button" onClick={handleDocumentUpload} className="flex min-h-12 w-full items-center justify-center gap-2 rounded-md bg-[#126df3] px-5 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-[#095bcf] hover:shadow-lg">
+        <button type="button" onClick={handleDocumentUpload} className="flex min-h-12 w-full items-center justify-center gap-2 rounded-md bg-[#07336d] px-5 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-[#05224a] hover:shadow-lg">
           <span className="text-lg">➤</span> Upload
         </button>
       </div>
@@ -608,7 +608,7 @@ const SectionCard = ({ title, hindi, number, children }) => {
   return (
     <section className="relative h-full overflow-visible rounded-lg border border-[#d8dee5] bg-white shadow-sm">
       <div className="flex items-center gap-3 border-b border-[#dce2e7] bg-[#f8f9fa] px-4 py-3 sm:px-5">
-        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-[#126df3] text-xs font-bold text-white">
+        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-[#07336d] text-xs font-bold text-white">
           {number}
         </div>
         <div>
@@ -650,7 +650,7 @@ const OfficeAddressRow = ({ label, hindi, name, value, onChange, placeholder }) 
         <span className="font-medium">{label}</span>
         <span className="block text-[11px] text-gray-500">{hindi}</span>
       </label>
-      <textarea name={name} value={value} onChange={onChange} rows={3} placeholder={placeholder} className="w-full resize-none rounded-md border border-[#cfd7df] bg-white px-3 py-2.5 text-sm text-gray-700 outline-none transition placeholder:text-[#8a96a3] focus:border-[#126df3] focus:ring-2 focus:ring-[#126df3]/15" />
+      <textarea name={name} value={value} onChange={onChange} rows={3} placeholder={placeholder} className="w-full resize-none rounded-md border border-[#cfd7df] bg-white px-3 py-2.5 text-sm text-gray-700 outline-none transition placeholder:text-[#8a96a3] focus:border-[#07336d] focus:ring-2 focus:ring-[#07336d]/15" />
     </div>
   );
 };
@@ -667,7 +667,7 @@ const ImageUpload = ({ title, hindi, fileName, onChange }) => {
         <span className="font-medium">{title}</span>
         <span className="block text-[11px] text-gray-500">{hindi}</span>
       </label>
-      <label className="flex h-11 w-full cursor-pointer overflow-hidden rounded-md border border-[#cfd7df] bg-white transition hover:border-[#126df3]">
+      <label className="flex h-11 w-full cursor-pointer overflow-hidden rounded-md border border-[#cfd7df] bg-white transition hover:border-[#07336d]">
         <span className="flex shrink-0 items-center border-r border-[#cfd7df] bg-[#f4f6f8] px-4 text-sm font-medium text-gray-700">Choose file</span>
         <span className="flex min-w-0 flex-1 items-center truncate px-3 text-sm text-gray-500">{fileName || "No file chosen"}</span>
         <input type="file" accept=".jpg,.jpeg,.png" onChange={onChange} className="hidden" />
@@ -681,7 +681,7 @@ const ImageUpload = ({ title, hindi, fileName, onChange }) => {
    STYLES
 ========================================================= */
 
-const inputClass = "h-11 w-full rounded-md border border-[#cfd7df] bg-white px-3 text-sm text-[#263746] outline-none transition placeholder:text-[#8a96a3] hover:border-[#aeb9c5] focus:border-[#126df3] focus:ring-2 focus:ring-[#126df3]/15";
+const inputClass = "h-11 w-full rounded-md border border-[#cfd7df] bg-white px-3 text-sm text-[#263746] outline-none transition placeholder:text-[#8a96a3] hover:border-[#aeb9c5] focus:border-[#07336d] focus:ring-2 focus:ring-[#07336d]/15";
 
 /* =========================================================
    EXPORT
