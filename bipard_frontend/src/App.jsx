@@ -4,6 +4,8 @@ import Layout from "./components/Layout";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import CandidateRegistration from "./pages/registration/CandidateRegistration";
+import Application from "./pages/candidates/Application";
+import Test from "./pages/candidates/Test";
 // import Login from "./pages/Login";
 // import Register from "./pages/Register";
 
@@ -17,6 +19,8 @@ export default function App() {
         <Route index element={<Home />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<CandidateRegistration />} />
+        <Route path="application-form" element={<Application />} />
+        <Route path="test" element={<Test />} />
       </Route>
     </Routes>
   );
