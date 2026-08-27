@@ -1,6 +1,7 @@
 import React from "react";
 import { UserPlus, LogIn, ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -10,9 +11,7 @@ export default function Navbar() {
       <div
         className="
           relative
-          mx-auto
           w-full
-          max-w-[1400px]
           overflow-hidden
           rounded-none
           bg-white
@@ -136,6 +135,7 @@ export default function Navbar() {
             "
           >
             {/* BIPARD Logo */}
+            <Link to="/" className="flex items-center gap-3 no-underline">
             <img
               src="/bipard_logo.png"
               alt="BIPARD Logo"
@@ -171,7 +171,7 @@ export default function Navbar() {
                 BIPARD
               </h1>
             </div>
-
+</Link>
             {/* Vertical Divider */}
             <div
               className="

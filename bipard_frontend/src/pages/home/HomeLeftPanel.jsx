@@ -22,7 +22,8 @@ const features = [
 
 export default function HomeLeftPanel() {
   return (
-    <aside className="portal-left-panel flex flex-col items-center w-full md:w-[40%] lg:w-[460px] min-h-full overflow-hidden shrink-0 rounded-t-none md:rounded-tr-none md:rounded-l-none">
+   
+    <aside className="portal-left-panel flex flex-col items-center w-full md:w-[45%] lg:w-[520px] xl:w-[560px] min-h-full overflow-hidden shrink-0 rounded-t-none md:rounded-tr-none md:rounded-l-none">
       {/* Subtle Dotted Pattern Overlay */}
       <div className="portal-pattern" />
 
@@ -88,11 +89,11 @@ export default function HomeLeftPanel() {
             return (
               <div
                 key={index}
-                className="flex flex-col items-center justify-center bg-white rounded-xl shadow-[0_8px_24px_-6px_rgba(0,0,0,0.3)] transition-transform duration-200 hover:-translate-y-1 relative overflow-hidden"
-                style={{ width: "105px", height: "135px" }}
+                className="flex flex-col items-center justify-center bg-white opacity-70 rounded-none shadow-[0_8px_24px_-6px_rgba(0,0,0,0.3)] transition-transform duration-200 hover:-translate-y-1 relative overflow-hidden"
+                style={{ width: "95px", height: "125px" }}
               >
                 {/* Icon Container */}
-                <div className="w-[52px] h-[52px] rounded-full bg-[#EDF4FC] flex items-center justify-center mb-3">
+                <div className="w-[42px] h-[42px] rounded-full bg-[#EDF4FC] flex items-center justify-center mb-3">
                   <Icon size={26} color="#1260B2" strokeWidth={2} />
                 </div>
                 
