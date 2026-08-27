@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 // =====================================================
 // Icons
@@ -80,7 +81,7 @@ const ActionButton = ({
   onClick,
 }) => {
   const baseClasses =
-    "inline-flex min-h-[42px] cursor-pointer items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold tracking-[0.01em] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 active:translate-y-[1px]";
+    "inline-flex min-h-[42px] cursor-pointer items-center justify-center gap-2  px-4 py-2.5 text-sm font-semibold tracking-[0.01em] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 active:translate-y-[1px]";
 
   const variants = {
     primary:
@@ -180,6 +181,8 @@ const DashboardCard = ({ title, tag, children }) => {
 // =====================================================
 
 function CandidateDashboard() {
+  const navigate = useNavigate();
+
   return (
     <div
       className="
@@ -224,7 +227,7 @@ function CandidateDashboard() {
               flex items-start
               gap-3
               overflow-hidden
-             
+         
               border border-amber-200
               bg-amber-50/95
               p-4
@@ -282,7 +285,10 @@ function CandidateDashboard() {
                 </p>
 
                 <div className="mt-auto border-t border-slate-100 pt-4">
-                  <ActionButton icon={<SendIcon />}>
+                  <ActionButton
+                    icon={<SendIcon />}
+                    onClick={() => navigate("/application-form")}
+                  >
                     Apply for Examination
                   </ActionButton>
                 </div>
@@ -307,7 +313,10 @@ function CandidateDashboard() {
                 </p>
 
                 <div className="mt-auto border-t border-slate-100 pt-4">
-                  <ActionButton icon={<CalendarIcon />}>
+                  <ActionButton
+                    icon={<CalendarIcon />}
+                    onClick={() => navigate("/test")}
+                  >
                     Practice Slot
                   </ActionButton>
                 </div>
