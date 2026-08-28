@@ -852,7 +852,7 @@ export default function CandidateRegistration() {
             RIGHT FORM
         ================================================= */}
 
-        <div className="w-full lg:flex-1 bg-white flex flex-col px-6 py-8 lg:px-12 relative z-10 shrink-0">
+        <div className="w-full lg:flex-1 bg-white flex flex-col px-4 sm:px-6 py-8 lg:px-12 relative z-10 shrink-0 min-w-0">
 
           {/* HEADER */}
 
@@ -891,7 +891,7 @@ export default function CandidateRegistration() {
           <form
             onSubmit={handleSubmit}
             noValidate
-            className="flex flex-col flex-1 w-full relative"
+            className="flex flex-col flex-1 w-full min-w-0 relative"
           >
 
             {/* REQUIRED TEXT */}
@@ -1294,21 +1294,17 @@ export default function CandidateRegistration() {
 
                 <div className="w-full lg:w-[65%]">
 
-                  <div className="flex gap-2">
+                  <div className="grid grid-cols-1 sm:grid-cols-[minmax(0,1fr)_auto] gap-2 w-full">
 
                     <input
                       name="mobile"
-                      value={
-                        formData.mobile
-                      }
-                      onChange={
-                        handleChange
-                      }
+                      value={formData.mobile}
+                      onChange={handleChange}
                       type="text"
                       inputMode="numeric"
                       maxLength={10}
                       placeholder="Enter 10 digit mobile number"
-                      className={`flex-1 h-[45px] px-4 border rounded-[6px] text-[15px] outline-none ${
+                      className={`w-full min-w-0 h-[45px] px-4 border rounded-[6px] text-[15px] outline-none ${
                         fieldErrors.mobile
                           ? "border-red-400"
                           : "border-[#CBD5E1]"
@@ -1317,14 +1313,10 @@ export default function CandidateRegistration() {
 
                     <button
                       type="button"
-                      onClick={
-                        handleSendOTP
-                      }
-                      className="h-[45px] px-5 bg-[#2563EB] hover:bg-[#1d4ed8] text-white font-semibold text-[14px] rounded-[6px] shrink-0"
+                      onClick={handleSendOTP}
+                      className="w-full sm:w-auto min-w-0 h-[45px] px-5 bg-[#2563EB] hover:bg-[#1d4ed8] text-white font-semibold text-[14px] rounded-[6px] whitespace-nowrap"
                     >
-                      {otpSent
-                        ? "Resend OTP"
-                        : "Send OTP"}
+                      {otpSent ? "Resend OTP" : "Send OTP"}
                     </button>
 
                   </div>
@@ -1355,21 +1347,17 @@ export default function CandidateRegistration() {
 
                 <div className="w-full lg:w-[65%]">
 
-                  <div className="flex gap-2">
+                  <div className="grid grid-cols-1 sm:grid-cols-[minmax(0,1fr)_auto] gap-2 w-full">
 
                     <input
                       name="otp"
-                      value={
-                        formData.otp
-                      }
-                      onChange={
-                        handleChange
-                      }
+                      value={formData.otp}
+                      onChange={handleChange}
                       type="text"
                       inputMode="numeric"
                       maxLength={4}
                       placeholder="Enter 4 digit OTP"
-                      className={`flex-1 h-[45px] px-4 border rounded-[6px] text-[15px] outline-none ${
+                      className={`w-full min-w-0 h-[45px] px-4 border rounded-[6px] text-[15px] outline-none ${
                         fieldErrors.otp
                           ? "border-red-400"
                           : "border-[#CBD5E1]"
@@ -1378,21 +1366,15 @@ export default function CandidateRegistration() {
 
                     <button
                       type="button"
-                      onClick={
-                        handleVerifyOTP
-                      }
-                      disabled={
-                        otpVerified
-                      }
-                      className={`h-[45px] px-5 text-white font-semibold text-[14px] rounded-[6px] shrink-0 ${
+                      onClick={handleVerifyOTP}
+                      disabled={otpVerified}
+                      className={`w-full sm:w-auto min-w-0 h-[45px] px-5 text-white font-semibold text-[14px] rounded-[6px] whitespace-nowrap ${
                         otpVerified
                           ? "bg-green-600"
                           : "bg-[#16A34A] hover:bg-[#15803d]"
                       }`}
                     >
-                      {otpVerified
-                        ? "Verified ✓"
-                        : "Verify OTP"}
+                      {otpVerified ? "Verified ✓" : "Verify OTP"}
                     </button>
 
                   </div>
