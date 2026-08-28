@@ -11,6 +11,7 @@ import CandidateDashboard from "./pages/candidates/CandidateDashboard";
 
 import PrivacyPolicy from "./pages/privacypolicy/PrivacyPolicy";
 import RefundPolicy from "./pages/privacypolicy/RefundPolicy";
+import Verification from "./pages/home/Verification";
 
 
 export default function App() {
@@ -27,6 +28,8 @@ export default function App() {
 
         <Route path="privacy-policy" element={<PrivacyPolicy/>} />
         <Route path="refund-policy" element={<RefundPolicy/>}/>
+
+        <Route path="certificate-check" element={<Verification/>}/>
 
       </Route>
     </Routes>
