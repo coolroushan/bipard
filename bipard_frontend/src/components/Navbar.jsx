@@ -182,56 +182,30 @@ export default function Navbar() {
               className="flex items-center gap-3 no-underline"
             >
               <img
-                src="/bipard_logo.png"
-                alt="BIPARD Logo"
-                className="
-                  h-[50px]
-                  w-[50px]
-                  sm:h-[62px]
-                  sm:w-[62px]
-                  shrink-0
-                  object-contain
-                  md:h-[70px]
-                  md:w-[70px]
-                  lg:h-[78px]
-                  lg:w-[78px]
-                "
+                src="/logo.jpg"
+                alt="bor Logo"
+                // className="
+                //   h-[50px]
+                //   w-[50px]
+                //   sm:h-[62px]
+                //   sm:w-[62px]
+                //   shrink-0
+                //   object-contain
+                //   md:h-[70px]
+                //   md:w-[70px]
+                //   lg:h-[78px]
+                //   lg:w-[78px]
+                // "
               />
 
-              <div className="shrink-0">
-                <h1
-                  className="
-                    m-0
-                    text-[28px]
-                    sm:text-[32px]
-                    font-bold
-                    leading-none
-                    tracking-[-1.5px]
-                    text-[#0a376f]
-                    md:text-[38px]
-                    lg:text-[42px]
-                  "
-                >
-                  BIPARD
-                </h1>
-              </div>
+
             </Link>
 
             {/* VERTICAL DIVIDER */}
-            <div
-              className="
-                mx-1
-                hidden
-                h-[58px]
-                w-px
-                bg-[#aeb5bd]
-                md:block
-                lg:mx-3
-              "
-            />
+
 
             {/* ORGANIZATION NAME */}
-            <div
+            {/* <div
               className="
                 hidden
                 flex-col
@@ -249,7 +223,7 @@ export default function Navbar() {
                   lg:text-[14px]
                 "
               >
-                बिहार लोक प्रशासन एवं
+                राजस्व पर्षद
               </span>
 
               <span
@@ -262,7 +236,7 @@ export default function Navbar() {
                   lg:text-[14px]
                 "
               >
-                ग्रामीण विकास संस्थान
+                पर्षद
               </span>
 
               <span
@@ -278,7 +252,7 @@ export default function Navbar() {
               >
                 बिहार सरकार
               </span>
-            </div>
+            </div> */}
           </div>
 
           {/* =======================================================

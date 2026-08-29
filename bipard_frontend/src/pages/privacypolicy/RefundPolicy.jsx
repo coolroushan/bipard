@@ -18,7 +18,7 @@ export default function RefundPolicy() {
 
       {/* Introduction */}
       <p className="text-[15px] leading-[1.75] font-normal" style={{ fontFamily: '"Noto Sans Devanagari", "Nirmala UI", Arial, sans-serif' }}>
-        Thanks for shopping at BIPARD Exam Portal.
+        Thanks for shopping at BOR Exam Portal.
         <br />
         If you are not entirely satisfied with your purchase, we're here to help.
       </p>

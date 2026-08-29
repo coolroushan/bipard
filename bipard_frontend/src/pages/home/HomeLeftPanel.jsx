@@ -454,7 +454,7 @@ export default function HomeLeftPanel() {
                     <td className="border border-[#446CB3] p-3 text-center">
 
                       <a
-                        href="/Syllabus.pdf"
+                        href="/BOR.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex justify-center items-center text-[#0056b3] hover:text-blue-800 transition-colors"

@@ -9,9 +9,9 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="space-y-4">
-            <h4 className="text-white font-bold text-lg tracking-wider">BIPARD</h4>
+            <h4 className="text-white font-bold text-lg tracking-wider">BOR</h4>
             <p className="text-sm leading-relaxed text-blue-200">
-              Bihar Institute of Public Administration & Rural Development
+              Board Of Revenue
             </p>
             <div className="flex items-start gap-2 text-sm text-blue-200 mt-2">
               <MapPin size={16} className="mt-1 flex-shrink-0" />
